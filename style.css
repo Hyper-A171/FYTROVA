@@ -1,0 +1,278 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --accent-color: #8B4513;
+    /* Default Cocoa */
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    transition: background-color 0.5s ease;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    /* Adjust based on preference */
+    width: auto;
+    border-radius: 5px;
+    /* Soften edges if it has a background */
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.shop-btn {
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.shop-btn:hover {
+    background: var(--accent-color);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    position: relative;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+    gap: 4rem;
+}
+
+.text-content {
+    flex: 1;
+    z-index: 10;
+}
+
+.sub-headline {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.benefits-list li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    color: #e0e0e0;
+}
+
+.benefits-list li::before {
+    content: '✔';
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.product-specs {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-val {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.spec-label {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.cta-btn {
+    padding: 1rem 3rem;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Image Content */
+.image-content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-bg {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    opacity: 0.2;
+    z-index: 0;
+    transition: background 0.5s;
+}
+
+.product-img {
+    width: 100%;
+    max-width: 500px;
+    z-index: 1;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    border-radius: 20px;
+    /* Optional if images are square */
+}
+
+/* Slider */
+.ingredients-slider {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.ingredients-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-track {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.slide-item {
+    min-width: 120px;
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.slide-item:hover,
+.slide-item.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.slide-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+.slide-item h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .main-headline {
+        font-size: 3rem;
+    }
+
+    .product-specs {
+        justify-content: center;
+    }
+
+    .benefits-list li {
+        justify-content: center;
+    }
+
+    .circle-bg {
+        width: 300px;
+        height: 300px;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
