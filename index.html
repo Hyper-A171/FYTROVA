@@ -18,14 +18,23 @@
             <img src="assets/logo.jpg" alt="Fytrova Logo">
         </div>
         <div class="nav-links">
-            <a href="#">Products</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#products">Products</a>
+            <a href="about.html">About</a>
         </div>
-        <button class="shop-btn">Shop Now</button>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
-    <main class="hero-section">
+    <div class="mobile-menu">
+        <a href="#products">Products</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <main class="hero-section" id="products">
         <div class="content-wrapper">
             <div class="text-content">
                 <h2 class="sub-headline">NATURALLY CRAFTED FOR MAXIMUM RESULT</h2>
@@ -51,8 +60,6 @@
                         <span class="spec-label">Absorption</span>
                     </div>
                 </div>
-
-                <button class="cta-btn">Order Now</button>
             </div>
 
             <div class="image-content">

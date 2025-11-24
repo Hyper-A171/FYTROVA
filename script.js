@@ -129,3 +129,27 @@ function updateContent(index) {
 }
 
 initSlider();
+
+// UI/UX Improvement: Parallax Effect on Image
+// UI/UX Improvement: Parallax Effect on Image (Mouse + Scroll)
+let mouseX = 0;
+let mouseY = 0;
+let scrollY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = (window.innerWidth - e.pageX * 2) / 100;
+    mouseY = (window.innerHeight - e.pageY * 2) / 100;
+});
+
+window.addEventListener('scroll', () => {
+    scrollY = window.scrollY / 10; // Adjust divisor for sensitivity
+});
+
+function animateImage() {
+    // Combine mouse and scroll effects
+    // Adding rotation based on scroll for extra dynamic feel
+    productImg.style.transform = `translateX(${mouseX}px) translateY(${mouseY + scrollY}px) rotate(${scrollY / 2}deg)`;
+    requestAnimationFrame(animateImage);
+}
+
+animateImage();
