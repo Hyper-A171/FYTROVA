@@ -21,7 +21,7 @@ const ingredients = [
     },
     {
         name: "Cashew (Kaju)",
-        image: "assets/cashew.jpg",
+        image: "assets/sattu.jpg",
         color: "#F4A460",
         benefits: [
             "Good plant protein for lean muscle",
@@ -31,7 +31,7 @@ const ingredients = [
     },
     {
         name: "Sattu",
-        image: "assets/sattu.jpg",
+        image: "assets/cashew.jpg",
         color: "#DAA520",
         benefits: [
             "High natural protein → great for muscle growth",
@@ -41,7 +41,7 @@ const ingredients = [
     },
     {
         name: "Oats",
-        image: "assets/oats.jpg",
+        image: "assets/b.jpeg",
         color: "#F0E68C",
         benefits: [
             "Complex carbs → slow, steady energy release",
@@ -51,7 +51,7 @@ const ingredients = [
     },
     {
         name: "Peanuts",
-        image: "assets/almond.jpg", // Placeholder
+        image: "assets/oats.jpg", // Placeholder
         color: "#CD853F",
         benefits: [
             "High-protein + good fats → muscle gain + energy",
@@ -61,7 +61,7 @@ const ingredients = [
     },
     {
         name: "Soya",
-        image: "assets/sattu.jpg", // Placeholder
+        image: "assets/a (1).jpeg", // Placeholder
         color: "#D2B48C",
         benefits: [
             "One of the highest plant-protein sources",
