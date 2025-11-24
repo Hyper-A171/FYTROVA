@@ -83,23 +83,23 @@ function initSlider() {
         const slideItem = document.createElement('div');
         slideItem.classList.add('slide-item');
         if (index === 0) slideItem.classList.add('active');
-        
+
         slideItem.innerHTML = `
             <img src="${ing.image}" alt="${ing.name}">
             <h4>${ing.name.split(' ')[0]}</h4>
         `;
-        
+
         slideItem.addEventListener('click', () => updateContent(index));
         sliderTrack.appendChild(slideItem);
     });
-    
+
     // Initial Load
     updateContent(0);
 }
 
 function updateContent(index) {
     const data = ingredients[index];
-    
+
     // Update Active State in Slider
     document.querySelectorAll('.slide-item').forEach((item, i) => {
         if (i === index) item.classList.add('active');
@@ -114,9 +114,9 @@ function updateContent(index) {
 
     setTimeout(() => {
         flavorTitle.innerText = data.name;
-        
+
         benefitsList.innerHTML = data.benefits.map(benefit => `<li>${benefit}</li>`).join('');
-        
+
         productImg.src = data.image;
         root.style.setProperty('--accent-color', data.color);
 
